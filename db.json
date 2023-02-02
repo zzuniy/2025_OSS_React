@@ -1,10 +1,25 @@
 {
   "employee": [
     {
-      "id": 1,
-      "name": "Minsu",
-      "email": "jh@in.naver.com",
-      "phone": "01012345678"
+      "id": 2,
+      "name": "plla",
+      "email": "jhbljs92@naver.com",
+      "phone": "01044261317",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "mina",
+      "email": "mina@naver.com",
+      "phone": "01098765431",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "jimin Lee",
+      "email": "jimin@naver.com",
+      "phone": "01012345555",
+      "active": true
     }
   ]
 }
