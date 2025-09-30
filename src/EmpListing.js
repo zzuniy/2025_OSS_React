@@ -14,7 +14,7 @@ const EmpListing = () => {
   };
   const Removefunction = (id) => {
     if (window.confirm("Do you want to remove?")) {
-      fetch("http://localhost:8000/employee/" + id, {
+      fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee" + id, {
         method: "DELETE",
       })
         .then((res) => {
