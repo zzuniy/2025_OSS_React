@@ -33,7 +33,7 @@ const EmpEdit = () => {
     e.preventDefault();
     const empdata = { id, name, email, phone, active };
 
-    fetch("http://localhost:8000/employee/" + empid, {
+    fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee/" + empid, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(empdata),
