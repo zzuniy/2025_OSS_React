@@ -14,7 +14,7 @@ const EmpCreate = () => {
     e.preventDefault();
     const empdata = { id, name, email, phone, active };
 
-    fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee", {
+    fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(empdata),

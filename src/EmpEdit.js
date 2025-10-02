@@ -6,7 +6,7 @@ const EmpEdit = () => {
   //const [empdata, setEmpdata] = useState({});
 
   useEffect(() => {
-    fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee" + empid)
+    fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee/" + empid)
       .then((res) => {
         return res.json();
       })
@@ -20,7 +20,7 @@ const EmpEdit = () => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [empid]);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
