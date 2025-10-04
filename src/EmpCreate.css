@@ -1,78 +1,31 @@
 /* EmpCreate.css */
 
-/* 폼 전체 박스 */
-.form-container {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 25px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* 제목 */
-.form-container h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  color: #0a5cfe;
-  margin-bottom: 25px;
-}
-
-/* 각 입력 그룹 */
-.form-group {
-  margin-bottom: 18px;
-}
-
-/* 입력창 */
-.form-control {
-  border-radius: 8px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.form-control:focus {
-  border-color: #0a5cfe;
-  box-shadow: 0 0 5px rgba(10, 92, 254, 0.4);
-  outline: none;
-}
-
-/* 체크박스 */
-.form-check-label {
-  margin-left: 5px;
-}
-
-/* 버튼 스타일 */
+/* 공통 버튼 스타일 */
 .btn {
-  min-width: 100px;
   padding: 8px 14px;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
-  margin-right: 8px;
+  border: none;
+  cursor: pointer;
 }
 
+/* 저장 버튼 색 (Save) */
 .btn-success {
-  background-color: #0a5cfe;
-  border: none;
+  background-color: #0a5cfe; /* 원하는 색 */
+  color: white; /* 글자 색 */
 }
 
 .btn-success:hover {
-  background-color: #084ccc;
+  background-color: #084ccc; /* 마우스 올렸을 때 색 */
 }
 
+/* 취소 버튼 색 (Back) */
 .btn-danger {
-  background-color: #e74c3c;
-  border: none;
+  background-color: yellow; /* 원하는 색 */
+  color: black; /* 글자 색 */
 }
 
 .btn-danger:hover {
-  background-color: #c0392b;
-}
-
-/* 오류 메시지 */
-.text-danger {
-  font-size: 0.9rem;
-  margin-top: 4px;
+  background-color: gold; /* 마우스 올렸을 때 색 */
 }

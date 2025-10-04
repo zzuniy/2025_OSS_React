@@ -56,7 +56,10 @@ const EmpListing = () => {
             <thead className="bg-dark text-white">
               <tr>
                 <td>ID</td>
+                <td>First Name</td>
                 <td>Name</td>
+                <td>Age</td>
+                <td>Job</td>
                 <td>Email</td>
                 <td>Phone</td>
                 <td>Action</td>
@@ -67,7 +70,10 @@ const EmpListing = () => {
                 empdata.map((item) => (
                   <tr key={item.id}>
                     <td>{item.id}</td>
+                    <td>{item.firstname}</td>
                     <td>{item.name}</td>
+                    <td>{item.age}</td>
+                    <td>{item.job}</td>
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>

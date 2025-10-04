@@ -1,20 +1,26 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./EmpCreate.css";
+import "./EmpCreate.css"; 
+
+
 
 
 const EmpCreate = () => {
   const [id, setId] = useState("");
+  const [firstname, setfirstName] = useState("");
   const [name, setName] = useState("");
+  const [age, setAge] = useState(""); //추가
+  const [job, setJob] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
   const [active, setActive] = useState(true);
   const [validation, setValidation] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, email, phone, active };
+    const empdata = { id,firstname ,name,age, job,email, phone, active };
 
     fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee/", {
       method: "POST",
@@ -52,20 +58,49 @@ const EmpCreate = () => {
                     </div>
                   </div>
                   <div className="col-lg-12">
+                      <div className="form-group">
+                        <label>First Name</label>
+                        <input
+                          value={firstname}
+                          onChange={(e) => setfirstName(e.target.value)}
+                          className="form-control"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-12">
+                      <div className="form-group">
+                        <label>Name</label>
+                        <input
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          className="form-control"
+                        />
+                      </div>
+                    </div>
+
+                  <div className="col-lg-12">
                     <div className="form-group">
-                      <label>Name</label>
+                      <label>Age</label>
                       <input
-                        onMouseDown={(e) => setValidation(true)}
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        type="number"
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
                         className="form-control"
-                      ></input>
-                      {name.length === 0 && validation && (
-                        <span className="text-danger">Enter the name</span>
-                      )}
+                      />
                     </div>
                   </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Job</label>
+                      <input
+                        value={job}
+                        onChange={(e) => setJob(e.target.value)}
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
+
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Email</label>
@@ -73,9 +108,11 @@ const EmpCreate = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="form-control"
-                      ></input>
+                      />
                     </div>
                   </div>
+
+
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Phone</label>
@@ -86,27 +123,29 @@ const EmpCreate = () => {
                       ></input>
                     </div>
                   </div>
-                  <div className="col-lg-12">
-                    <div className="form-check">
+               <div className="col-lg-12">
+                    <div className="form-check form-switch">
                       <input
                         checked={active}
                         onChange={(e) => setActive(e.target.checked)}
                         type="checkbox"
                         className="form-check-input"
                       ></input>
-                      <label className="form-check-label">Is Active</label>
+                      <label className="form-check-label fw-bold text-primary">Is Active</label>
                     </div>
+                </div>
+
+                <div className="col-lg-12">
+                  <div className="form-group">
+                    <button className="btn btn-light" type="submit">
+                      Save
+                    </button>
+                    <Link to="/" className="btn btn-warning">
+                      Back
+                    </Link>
                   </div>
-                  <div className="col-lg-12">
-                    <div className="form-group">
-                      <button className="btn btn-success" type="submit">
-                        Save
-                      </button>
-                      <Link to="/" className="btn btn-danger">
-                        Back
-                      </Link>
-                    </div>
-                  </div>
+                </div>
+
                 </div>
               </div>
             </div>

@@ -12,7 +12,10 @@ const EmpEdit = () => {
       })
       .then((resp) => {
         setId(resp.id);
+        setfirstName(resp.firstname);
         setName(resp.name);
+        setAge(resp.age);
+        setJob(resp.job);
         setEmail(resp.email);
         setPhone(resp.phone);
         setActive(resp.active);
@@ -22,7 +25,10 @@ const EmpEdit = () => {
       });
   }, [empid]);
   const [id, setId] = useState("");
+  const [firstname, setfirstName] = useState("");
   const [name, setName] = useState("");
+  const [age, setAge] = useState(""); //추가
+  const [job, setJob] = useState(""); //추가
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [active, setActive] = useState(true);
@@ -31,7 +37,7 @@ const EmpEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, email, phone, active };
+    const empdata = { id, firstname,name, age,job,email, phone, active };
 
     fetch("https://68db331c23ebc87faa323bc7.mockapi.io/employee/" + empid, {
       method: "PUT",
@@ -67,6 +73,21 @@ const EmpEdit = () => {
                       ></input>
                     </div>
                   </div>
+                       <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>First Name</label>
+                      <input
+                        onMouseDown={(e) => setValidation(true)}
+                        required
+                        value={firstname}
+                        onChange={(e) => setfirstName(e.target.value)}
+                        className="form-control"
+                      ></input>
+                      {name.length === 0 && validation && (
+                        <span className="text-danger">Enter the first name</span>
+                      )}
+                    </div>
+                  </div>
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Name</label>
@@ -82,6 +103,29 @@ const EmpEdit = () => {
                       )}
                     </div>
                   </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Age</label>
+                      <input
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
+                    <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Job</label>
+                      <input
+                        value={job}
+                        onChange={(e) => setJob(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Email</label>
@@ -103,22 +147,22 @@ const EmpEdit = () => {
                     </div>
                   </div>
                   <div className="col-lg-12">
-                    <div className="form-check">
+                    <div className="form-check form-switch">
                       <input
                         checked={active}
                         onChange={(e) => setActive(e.target.checked)}
                         type="checkbox"
                         className="form-check-input"
                       ></input>
-                      <label className="form-check-label">Is Active</label>
+                      <label className="form-check-label fw-bold text-primary">Is Active</label>
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <button className="btn btn-success" type="submit">
+                      <button className="btn btn-info" type="submit">
                         Save
                       </button>
-                      <Link to="/" className="btn btn-danger">
+                      <Link to="/" className="btn btn-warning">
                         Back
                       </Link>
                     </div>

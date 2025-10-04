@@ -4,11 +4,13 @@ import EmpListing from "./EmpListing";
 import EmpCreate from "./EmpCreate";
 import EmpEdit from "./EmpEdit";
 import EmpDetail from "./EmpDetail";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to zzuniy's oss lab5</h1>
+    <div className="App container mt-4">
+      <h1 className="mb-4 text-center">Welcome to zzuniy's OSS Lab5</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<EmpListing />}></Route>

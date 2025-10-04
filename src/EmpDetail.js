@@ -29,9 +29,15 @@ const EmpDetail = () => {
         {empdata && (
           <div>
             <h2>
-              The Employee name is : <b>{empdata.name}</b> ({empdata.id})
+              The Employee name is : <b>{empdata.name} {empdata.firstname}</b> ({empdata.id})
             </h2>
             <h3>Contact Details</h3>
+            <h5>
+              age is: <b>{empdata.age}</b>
+              </h5>
+              <h5>
+              job is: <b>{empdata.job}</b>
+              </h5>
             <h5>
               Email is : <b>{empdata.email}</b>
             </h5>
