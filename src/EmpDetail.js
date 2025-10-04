@@ -24,6 +24,7 @@ const EmpDetail = () => {
         <div className="card-title">
           <h2>Employee Create</h2>
         </div>
+
         <div className="card-body"></div>
         {empdata && (
           <div>
@@ -46,5 +47,4 @@ const EmpDetail = () => {
     </div>
   );
 };
-
 export default EmpDetail;

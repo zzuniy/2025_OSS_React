@@ -8,7 +8,7 @@ import EmpDetail from "./EmpDetail";
 function App() {
   return (
     <div className="App">
-      <h1>React JS CRUD Opertations</h1>
+      <h1>Welcome to zzuniy's oss lab5</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<EmpListing />}></Route>

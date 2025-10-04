@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./EmpCreate.css";
+
 
 const EmpCreate = () => {
   const [id, setId] = useState("");
@@ -32,7 +34,7 @@ const EmpCreate = () => {
     <div>
       <div className="row">
         <div className="offset-lg-3 col-lg-6">
-          <form className="container" onSubmit={handleSubmit}>
+          <form className="form-container" onSubmit={handleSubmit}>
             <div className="card" style={{ textAlign: "left" }}>
               <div className="card-title">
                 <h2>Employee Create</h2>
